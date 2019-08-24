@@ -1,0 +1,56 @@
+package Sorting;
+
+class Node{
+	int data;
+	Node next;
+	
+	public Node(int data) {
+		this.data = data;
+		this.next = null;
+	}
+	
+}
+
+class LinkedList{
+	Node head;
+	
+	public void addNode(int data) {
+		Node tempNode = new Node(data);
+		if(head == null) {
+			head = tempNode;
+		}
+		else {
+			Node temp = head;
+			while(temp.next!=null) {
+				temp = temp.next;
+			}
+			temp.next = tempNode;
+		}
+	}
+	
+	public void printList() {
+		Node temp = head;
+		while(temp!=null) {
+			System.out.print(temp.data+ " ");
+			temp = temp.next;
+		}
+	}
+}
+
+public class LinkedListMergeSort {
+	
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		LinkedList list = new LinkedList();
+		list.addNode(3);
+		list.addNode(-1);
+		list.addNode(0);
+		list.addNode(4);
+		list.addNode(2);
+		
+
+	}
+
+}

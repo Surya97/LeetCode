@@ -1,0 +1,22 @@
+package Sorting;
+
+
+public class Node{
+	int data;
+	Node next;
+	
+	public Node(int data) {
+		this.data = data;
+	}
+}
+
+public class LinkedListMergeSort {
+	
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

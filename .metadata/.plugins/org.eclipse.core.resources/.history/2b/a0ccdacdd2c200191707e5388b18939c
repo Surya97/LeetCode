@@ -1,0 +1,70 @@
+package Sorting;
+
+import LinkedList.*;
+
+public class LinkedListMergeSort {
+	
+	public static Node sort(Node h) {
+		if(h == null || h.next==null) {
+			return h;
+		}
+		Node middle = getMiddle(h);
+		Node nextPart = middle.next;
+		middle.next = null;
+		Node left = sort(h);
+		Node right = sort(nextPart);
+		Node res = merge(left, right);
+		
+		return res;
+	}
+	
+	public static Node getMiddle(Node h) {
+		Node slowptr = h;
+		Node fastptr = h;
+		while(fastptr.next!=null && fastptr.next.next!=null) {
+			slowptr = slowptr.next;
+			fastptr = fastptr.next.next;
+		}
+		return slowptr;
+	}
+	
+	public static Node merge(Node left, Node right) {
+		LinkedList resList = new LinkedList();
+		Node resHead = resList.head;
+		while(left!=null && right!=null) {
+			if(left.data <= right.data) {
+				resList.addNode(left.data);
+				left = left.next;
+			}else {
+				resList.addNode(right.data);
+				right = right.next;
+			}
+		}
+		
+		while(left!=null) {
+			resList.addNode(left.data);
+			left = left.next;
+		}
+		
+		while(right!=null) {
+			resList.addNode(right.data);
+			right = right.next;
+		}
+		
+		return resHead;
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		LinkedList list = new LinkedList();
+		list.addNode(3);
+		list.addNode(-1);
+		list.addNode(0);
+		list.addNode(4);
+		list.addNode(2);
+		list.printList();
+		list.head = sort(list.head);
+		list.printList();
+	}
+
+}

@@ -1,0 +1,17 @@
+package Sorting;
+
+import LinkedList.*;
+
+public class LinkedListMergeSort {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		LinkedList list = new LinkedList();
+		list.addNode(3);
+		list.addNode(-1);
+		list.addNode(0);
+		list.addNode(4);
+		list.addNode(2);
+		list.printList();
+	}
+
+}
