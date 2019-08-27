@@ -11,6 +11,7 @@ public class LargestNumber {
 			num.add(nums[i]);
 		}
 		Collections.sort(num, new Comparator<Integer>() {
+			@Override
 			public int compare(Integer a, Integer b) {
 				String X = Integer.toString(a) + Integer.toString(b);
 				String Y = Integer.toString(b) + Integer.toString(a);
