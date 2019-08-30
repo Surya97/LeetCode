@@ -1,7 +1,5 @@
 package Leetcode;
 
-import java.util.HashMap;
-
 public class WordsFromCharacters {
 	public int countCharacters(String[] words, String chars) {
 		int[] charCount = new int[26];
@@ -9,9 +7,7 @@ public class WordsFromCharacters {
 		for (int i = 0; i < chars.length(); i++) {
 			charCount[chars.charAt(i) - 'a'] += 1;
 		}
-		HashMap<Character, Integer> mp;
 		int sum = 0;
-		boolean flag = true;
 		int[] temp;
 		for (int i = 0; i < words.length; i++) {
 			temp = charCount.clone();
