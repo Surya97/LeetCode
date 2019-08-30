@@ -10,7 +10,6 @@ public class ReverseOnlyLetters {
 
 	public String reverseOnlyLetters(String S) {
 		int i = 0, j = S.length() - 1;
-		StringBuffer buffer = new StringBuffer(S);
 		char[] temp = S.toCharArray();
 		while (i < j) {
 			if (isAlphabet(S.charAt(i)) && isAlphabet(S.charAt(j))) {
